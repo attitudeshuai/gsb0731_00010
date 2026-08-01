@@ -50,7 +50,7 @@ switch ($method) {
 function getDeathRecords($conn) {
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
     $limit = isset($_GET['limit']) ? (int)$_GET['limit'] : 10;
-    $offset = $page * $limit;
+    $offset = ($page - 1) * $limit;
     $search = isset($_GET['search']) ? $_GET['search'] : '';
 
     $where = '';

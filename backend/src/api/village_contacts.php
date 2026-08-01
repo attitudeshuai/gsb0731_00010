@@ -120,12 +120,9 @@ function createVillageContact($conn) {
         $data = $_POST;
     }
 
-    // Log for debugging (remove after fix)
     if (empty($data)) {
-        error_log("Raw input: " . $rawInput);
-        error_log("JSON decode error: " . json_last_error_msg());
         http_response_code(400);
-        echo json_encode(['success' => false, 'error' => 'No data received', 'debug' => $rawInput]);
+        echo json_encode(['success' => false, 'error' => 'No data received']);
         return;
     }
 
@@ -177,12 +174,9 @@ function updateVillageContact($conn, $id) {
         $data = $_POST;
     }
 
-    // Log for debugging (remove after fix)
     if (empty($data)) {
-        error_log("Raw input: " . $rawInput);
-        error_log("JSON decode error: " . json_last_error_msg());
         http_response_code(400);
-        echo json_encode(['success' => false, 'error' => 'No data received', 'debug' => $rawInput]);
+        echo json_encode(['success' => false, 'error' => 'No data received']);
         return;
     }
 
