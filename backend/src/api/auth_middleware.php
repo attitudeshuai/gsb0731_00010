@@ -42,10 +42,10 @@ function verifyAuth(PDO $conn) {
     $timestamp = (int)$parts[2];
     $signature = $parts[3];
 
-    // Verify token is not expired (24 hours)
+    // Verify token is not expired (24 hours, matches expires_in issued at login)
     // Allow 5 minutes clock skew for server/client time differences
     $tokenAge = time() - $timestamp;
-    if ($tokenAge > 600) {
+    if ($tokenAge > 86400) {
         return null;
     }
     // Allow tokens up to 5 minutes in the future (clock skew tolerance)
