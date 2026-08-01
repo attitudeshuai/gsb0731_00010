@@ -30,7 +30,7 @@ export default function Login() {
       if (data.success) {
         // Use the token returned by backend
         const userData = { ...data.data, token: data.data.token };
-        localStorage.setItem('userInfo', JSON.stringify(userData));
+        localStorage.setItem('user', JSON.stringify(userData));
         navigate('/');
       } else {
         // More user-friendly error messages
