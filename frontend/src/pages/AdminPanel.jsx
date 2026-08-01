@@ -135,7 +135,7 @@ function DeathRecordsModule({ onRefresh }) {
     const url = editingRecord
       ? `${API_URL}/death_records.php/${editingRecord.id}`
       : `${API_URL}/death_records.php`;
-    const method = editingRecord ? 'POST' : 'PUT';
+    const method = editingRecord ? 'PUT' : 'POST';
 
     try {
       const res = await fetch(url, {
@@ -359,7 +359,7 @@ function VillageContactsModule({ onRefresh }) {
     setLoading(true);
     try {
       const url = search
-        ? `${API_URL}/death_records.php/list?page=${page}&limit=10&search=${search}`
+        ? `${API_URL}/village_contacts.php/list?page=${page}&limit=10&search=${search}`
         : `${API_URL}/village_contacts.php/list?page=${page}&limit=10`;
       const res = await fetch(url, {
         headers: getAuthHeaders()
