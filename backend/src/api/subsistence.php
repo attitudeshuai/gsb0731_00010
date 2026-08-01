@@ -216,7 +216,7 @@ function updateSubsistence($conn, $id) {
 }
 
 function deleteSubsistence($conn, $id) {
-    $stmt = $conn->prepare("DELETE FROM special_assistance WHERE id = :id");
+    $stmt = $conn->prepare("DELETE FROM subsistence WHERE id = :id");
 
     if ($stmt->execute([':id' => $id])) {
         echo json_encode(['success' => true, 'message' => 'Record deleted successfully']);
