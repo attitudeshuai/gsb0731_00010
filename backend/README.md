@@ -12,11 +12,13 @@ PHP-based RESTful API backend with MySQL database support.
 ## API Endpoints
 
 ### Health Check
+
 - **GET** `/api/health`
   - Returns API status and database connection
   - Response: `{"status":"ok","database":"connected"}`
 
 ### Authentication
+
 - **POST** `/api/login`
   - User login endpoint
   - Body: `{"username":"admin","password":"admin123"}`
@@ -89,7 +91,7 @@ case '/api/users':
     break;
 ```
 
-3. Implement your endpoint logic in the new file
+1. Implement your endpoint logic in the new file
 
 ### Creating Models
 
@@ -128,4 +130,5 @@ class User extends BaseModel {
 - Add request validation
 - Use HTTPS in production
 - Store secrets in environment variables
-- Implement proper password hashing (password_hash/password_verify)
+- Implement proper password hashing (password\_hash/password\_verify)
+
